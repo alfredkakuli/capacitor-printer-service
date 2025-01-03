@@ -1,7 +1,9 @@
 # lidta-capacitor-bl-printer
 
-Print directly to bl printer
-Currently only available for android devices
+lidta-capacitor-bl-printer is the first free Capacitor solution to fully support print most documents including html with structure and styles to
+blutooth pos thermal printers without breaking any sweat
+
+## Currently only available for android devices
 
 ## Install
 
@@ -68,23 +70,85 @@ disconnect() => Promise<{ value: boolean; }>
 </docgen-api>
 
 ## Documentation
-[Visit Documentation Website](https://app.lidta.com/plugins/capacitor)
 
-## Vue 3 Capacitor 6 Capacitor exmaple 
-[See Vue 3 Capacitor 6 Example here](https://github.com/alfredkakuli/lidta-capacitor-bl-printer-example)
+[Visit Documentation Website](https://app.lidta.com/#/plugins/capacitor)
 
+## Vue 3 Capacitor 6 Capacitor exmaple
+
+## the following component uses vue 3 with composition API Syntax
+
+```Js
+<script setup>
+import { onMounted, ref } from 'vue'; //vue life cycle hooks(onMounted) and reactive (ref)
+import html2canvas from 'html2canvas'; //converts the html or any text to base64Image
+import { LidtaCapacitorBlPrinter } from 'lidta-capacitor-bl-printer'; //lidta-capacitor-bl-printer plugin
+
+const devices = ref([]);
+const connectedPrinter = ref({});
+const content = ref(null);
+
+const listDevices = async () => {
+  await LidtaCapacitorBlPrinter.getPairedDevices().then((result) => {
+      devices.value = result.devices || [];
+  }).catch((error) => {
+    alert(error);
+  });
+}
+
+const printReceipt = async (device) => {
+ await  LidtaCapacitorBlPrinter.connect({ address: device.address }).then(async () => {
+   connectedPrinter.value = device.name;
+   await  html2canvas(
+      content.value,
+    ).then(async (canvas) => {
+    const base64Image =  canvas.toDataURL("image/png");
+    LidtaCapacitorBlPrinter.printBase64({msg: base64Image, align: 1, /*0=>left 1=>center, 2=>right anything else=>invalid */ 
+    }).then(() => { LidtaCapacitorBlPrinter.disconnect();
+   }).catch((error) => alert(error)).finally(async () => {});
+  }).catch((error) => alert(error));
+  }).catch((error) => alert(error))
+};  
+</script>
+```
+
+## The following template uses Vuetify
+
+```html
+<template>
+<div class=" mt-8">
+  <div  class="text-center" >
+    <VBtn color="warning" class="text-center" variant="tonal"  @click="listDevices">
+      <VIcon icon="mdi-printer" size="24" color="info" ></VIcon>List Connected Devices</VBtn>
+  </div>
+  
+ <div class="text-center">
+   <VBtn variant="tonal" class="mt-1" v-for="device in devices" :key="device" @click="printReceipt(device)" color="indigo">
+  <VIcon icon="mdi-printer" ></VIcon>  Print on {{ device.name }} 
+  </VBtn>
+ </div>
+  <div class="text-center">
+    connected {{ connectedPrinter?.name }}
+  </div>
+
+<div  ref="content" id="content">
+    <h1>Hellow World</h1>
+    <img  height="80" width="80" src="@/assets/logo.png"  />
+</div>
+```
+
+[Clone  Full Vue 3 Capacitor 6 Example here](https://github.com/alfredkakuli/lidta-capacitor-bl-printer-example)
 
 ### Useful Links
-[![Official Website](https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci84MmMyYjhiZjY2MjFkZWM2MDQzMmRhMGZkM2EzY2M1ND9zaXplPTUwJmRlZmF1bHQ9cmV0cm8ifQ.HRDfqcUyaVF684N6a0RoyeP8odjHx9UbIBA_k8Uo8XM)](https://app.lidta.com) 
 
-
-
-This project does amazing things, and I’m glad you’re here!
+ Official Website  [Lidta tech](https://app.lidta.com)
 
 ## Support the Project
 
-If you like this project and want to support its development, feel free to buy me a coffee:
+This is the first free solution to fully support print most documents including html with structure and styles to
+blutooth pos thermal printers without breaking any sweat.
 
-[![Buy me a coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://buymeacoffee.com/alfredkakuli)
+<a href="https://www.buymeacoffee.com/alfredkakuli">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy me a coffee" width="150"/>
+</a>
 
 Your support is greatly appreciated and will help me keep improving this project.
