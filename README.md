@@ -14,7 +14,6 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
 * [`printBase64(...)`](#printbase64)
 * [`connect(...)`](#connect)
 * [`disconnect()`](#disconnect)
@@ -23,23 +22,6 @@ npx cap sync
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-### echo(...)
-
-```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
-```
-
-Echoes back the value that was passed into it
-
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
-
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
-
---------------------
-
 
 ### printBase64(...)
 
@@ -83,6 +65,8 @@ disconnect() => Promise<{ value: boolean; }>
 
 --------------------
 
+</docgen-api>
+--------------------
 ## Documentation
 [Visit Documentation Website](https://app.lidta.com/plugins/capacitor)
 
@@ -91,7 +75,7 @@ disconnect() => Promise<{ value: boolean; }>
 
 
 ### Useful Links
-[![Official Website](https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci84MmMyYjhiZjY2MjFkZWM2MDQzMmRhMGZkM2EzY2M1ND9zaXplPTUwJmRlZmF1bHQ9cmV0cm8ifQ.HRDfqcUyaVF684N6a0RoyeP8odjHx9UbIBA_k8Uo8XM)](https://app.lidta.com)
+[![Official Website](https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci84MmMyYjhiZjY2MjFkZWM2MDQzMmRhMGZkM2EzY2M1ND9zaXplPTUwJmRlZmF1bHQ9cmV0cm8ifQ.HRDfqcUyaVF684N6a0RoyeP8odjHx9UbIBA_k8Uo8XM)](https://app.lidta.com) 
 
 
 
@@ -104,5 +88,3 @@ If you like this project and want to support its development, feel free to buy m
 [![Buy me a coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://buymeacoffee.com/alfredkakuli)
 
 Your support is greatly appreciated and will help me keep improving this project.
-
-</docgen-api>
