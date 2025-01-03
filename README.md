@@ -1,7 +1,7 @@
 # lidta-capacitor-bl-printer
 
 Print directly to bl printer
-Vurrently only available for android devices
+Currently only available for android devices
 
 ## Install
 
