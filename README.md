@@ -66,7 +66,7 @@ disconnect() => Promise<{ value: boolean; }>
 --------------------
 
 </docgen-api>
---------------------
+
 ## Documentation
 [Visit Documentation Website](https://app.lidta.com/plugins/capacitor)
 
