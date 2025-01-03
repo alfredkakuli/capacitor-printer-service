@@ -86,12 +86,12 @@ disconnect() => Promise<{ value: boolean; }>
 ## Documentation
 [Visit Documentation Website](https://app.lidta.com/plugins/capacitor)
 
-## Vue 3 Capacitor exmaple 
-[See Example here](https://github.com/alfredkakuli/lidta-capacitor-bl-printer-example)
+## Vue 3 Capacitor 6 Capacitor exmaple 
+[See Vue 3 Capacitor 6 Example here](https://github.com/alfredkakuli/lidta-capacitor-bl-printer-example)
 
 
 ### Useful Links
-[![Official Website](https://app.lidta.com/public/logo.png)](https://app.lidta.com)
+[![Official Website](https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci84MmMyYjhiZjY2MjFkZWM2MDQzMmRhMGZkM2EzY2M1ND9zaXplPTUwJmRlZmF1bHQ9cmV0cm8ifQ.HRDfqcUyaVF684N6a0RoyeP8odjHx9UbIBA_k8Uo8XM)](https://app.lidta.com)
 
 
 
