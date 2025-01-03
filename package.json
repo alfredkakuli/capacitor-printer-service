@@ -1,6 +1,6 @@
 {
   "name": "lidta-capacitor-bl-printer",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Print directly to bl printer",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

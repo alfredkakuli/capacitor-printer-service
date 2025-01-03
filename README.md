@@ -73,9 +73,9 @@ disconnect() => Promise<{ value: boolean; }>
 
 [Visit Documentation Website](https://app.lidta.com/#/plugins/capacitor)
 
-## Vue 3 Capacitor 6 Capacitor exmaple
+## Vue 3 Capacitor 6 exmaple
 
-## the following component uses vue 3 with composition API Syntax
+## The following component uses vue 3 with composition API Syntax
 
 ```Js
 <script setup>
