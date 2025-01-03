@@ -8,3 +8,5 @@ const LidtaCapacitorBlPrinter = registerPlugin<LidtaCapacitorBlPrinterPlugin>('L
 
 export * from './definitions';
 export { LidtaCapacitorBlPrinter };
+  
+  

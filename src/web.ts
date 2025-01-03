@@ -7,4 +7,16 @@ export class LidtaCapacitorBlPrinterWeb extends WebPlugin implements LidtaCapaci
     console.log('ECHO', options);
     return options;
   }
+  async printBase64(options: { msg: string, align: number }): Promise<{ value: boolean }> {
+    console.log('printBase64', options);
+    return { value: true };
+  }
+  async connect(options: { address: string }): Promise<{ value: boolean }> {
+    console.log('connect', options);
+    return { value: true };
+  }
+  async disconnect(): Promise<{ value: boolean }> {
+    console.log('disconnect');
+    return { value: true };
+  }
 }

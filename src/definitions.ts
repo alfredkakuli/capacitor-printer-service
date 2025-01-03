@@ -1,3 +1,19 @@
 export interface LidtaCapacitorBlPrinterPlugin {
+
+  /**
+   * Echoes back the value that was passed into it
+   */
   echo(options: { value: string }): Promise<{ value: string }>;
+  //generate JSDoc 
+  
+  /**
+   * Print base64 string
+   */
+
+  printBase64(options: { msg: string, align: number }): Promise<{ value: boolean }>;
+  connect(options: { address: string }): Promise<{ value: boolean }>;
+  disconnect(): Promise<{ value: boolean }>;
+
+
+  
 }
